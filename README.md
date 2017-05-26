@@ -16,7 +16,7 @@
 3. run command for dev: npm run dev
 4. run command for prod : npm run build
 ```
-
+**email:** <867650527@qq.com>
 
 [GitHub](http://github.com)
 
