@@ -6,11 +6,11 @@
 
 **前端框架：**
 
-[react v15.x.x] (https://facebook.github.io/react/)
+[react v15.x.x] (https://facebook.github.io/react)
 
 **构建工具：**
 
-[webpack 2.x] (https://doc.webpack-china.org/)
+[webpack 2.x] (https://doc.webpack-china.org)
 
 **react-router：**
 
