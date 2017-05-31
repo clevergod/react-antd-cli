@@ -11,6 +11,12 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const config = require('../config');
 
 module.exports = merge(webpackBaseConfig, {
+    entry: [
+
+        'babel-polyfill',
+        './main.js'
+        // 我们 app 的入口文件
+    ],
     plugins: [
         new webpack.optimize.UglifyJsPlugin({
             comments: false,        //去掉注释

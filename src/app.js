@@ -4,26 +4,25 @@
 import React,{ Component } from 'react';
 import {
     BrowserRouter,
+    HashRouter,
     Route,
     Link
 } from 'react-router-dom';
-import routes from './router'
+
+import Home from './pages/home';
+import Login from './pages/login';
+import ComponentPage from './pages/componentPage';
+
 
 class App extends Component{
     render() {
         return (
-            <BrowserRouter>
+            <HashRouter>
                 <div id="contain">
-                    {
-                        routes.map((route,index) => (
-                            <Route key={index}
-                                   path={route.path}
-                                   component={route.component}
-                            />
-                        ))
-                    }
+                    <Route path="/home" component={Home}></Route>
+                    <Route path="/component" component={ComponentPage}></Route>
                 </div>
-            </BrowserRouter>
+            </HashRouter>
         )
     }
 }
