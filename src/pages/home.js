@@ -2,21 +2,34 @@
  * Created by qingclass on 17/5/26.
  */
 import React,{ Component } from 'react';
-import { Layout, Menu, Breadcrumb, Icon } from 'antd';
+
+import { Layout, Menu, Breadcrumb, Icon, Row, Col } from 'antd';
 const { Header, Content, Footer, Sider } = Layout;
 const SubMenu = Menu.SubMenu;
+const MenuItemGroup = Menu.ItemGroup;
 
-import '../style/style.css'
+import '../style/style.css';
+import MenuNav from '../component/MenuNav'
+
 class Home extends Component {
-    state = {
-        collapsed: false,
-        mode: 'inline',
+    constructor(props) {
+        super(props);
+        this.state = {
+            collapsed: false,
+            mode: 'inline',
+        };
     };
     onCollapse = (collapsed) => {
         console.log(collapsed);
         this.setState({
             collapsed,
             mode: collapsed ? 'vertical' : 'inline',
+        });
+    };
+    handleClick = (e) => {
+        console.log('click ', e);
+        this.setState({
+            current: e.key,
         });
     }
     render() {
@@ -53,14 +66,16 @@ class Home extends Component {
                     </Menu>
                 </Sider>
                 <Layout>
-                    <Header style={{ background: '#fff', padding: 0 }} />
+                    <Header style={{ background: '#404040', padding: 0 }} >
+                        <MenuNav current="home"></MenuNav>
+                    </Header>
                     <Content style={{ margin: '0 16px' }}>
                         <Breadcrumb style={{ margin: '12px 0' }}>
                             <Breadcrumb.Item>User</Breadcrumb.Item>
                             <Breadcrumb.Item>Bill</Breadcrumb.Item>
                         </Breadcrumb>
                         <div style={{ padding: 24, background: '#fff', minHeight: 360 }}>
-                            Bill is a cat hhhhh123ssssaaaaaaffffff.
+                            home Page
                         </div>
                     </Content>
                     <Footer style={{ textAlign: 'center' }}>
